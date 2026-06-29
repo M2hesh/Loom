@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loom"
+version = "0.1.0"
+description = "A minimal, adaptable agent harness — the best parts of gstack, ponytail, RTK, and ruflo."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []          # runs on the standard library alone
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+loom = "loom.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["loom*"]
